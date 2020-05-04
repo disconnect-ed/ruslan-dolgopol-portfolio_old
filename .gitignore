@@ -11,6 +11,10 @@
 # production
 /build
 
+# IntellijIdea files
+.idea
+out
+
 # misc
 .DS_Store
 .env.local
