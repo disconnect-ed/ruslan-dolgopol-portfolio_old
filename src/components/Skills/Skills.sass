@@ -1,5 +1,48 @@
 .skills
-  width: 100%
-  height: 100vh
-  overflow: hidden
-  position: relative
+  &-content
+    background-color: transparent !important
+    &__cards
+      margin-top: 30px
+      margin-bottom: 30px
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+    &__card
+      width: 290px
+      height: 290px
+      margin-bottom: 50px
+      &-img
+        width: 100%
+        height: 290px
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+          display: block
+          width: 100%
+      &-descr
+        background-color: rgba(0,0,0,0.5)
+        width: 100%
+        height: 290px
+        box-shadow: 0 0 10px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00
+        transition: all 0.3s ease
+        text-align: center
+        transform: rotateY(-180deg)
+        &__title
+          font-size: 30px
+          padding-top: 15px
+          padding-bottom: 15px
+        &__subtitle
+          font-size: 25px
+          padding-top: 15px
+        &__text
+          font-size: 20px
+          padding-right: 10px
+          padding-left: 10px
+
+
+
+.flip-container
+  perspective: 1000px
+  &:hover, &__flipper, .flip-container:hover &__flipper
+    transform: rotateY(180deg)

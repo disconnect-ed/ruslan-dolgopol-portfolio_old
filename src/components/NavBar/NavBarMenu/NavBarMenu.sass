@@ -1,0 +1,71 @@
+.navbar-menu
+  &-inner
+    display: none
+    flex-direction: column
+    justify-content: center
+    width: 100%
+    text-align: center
+    position: fixed
+    z-index: 99
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    list-style: none
+    background-color: rgba(0,0,0,0.8)
+    &_active
+      display: flex
+    &__point
+      display: block
+      a
+        text-decoration: none
+        color: white
+        font-size: 30px
+        line-height: 70px
+        text-transform: uppercase
+
+  &__button
+    display: block
+    position: relative
+    z-index: 100
+    cursor: pointer
+    height: 50px
+    width: 50px
+    border: solid 2px white
+    background-color: transparent
+    color: white
+    &_active .navbar-menu__button__cross
+      background-color: transparent
+    &_active .navbar-menu__button__cross:before
+      transform: rotate(135deg)
+      margin-top: 0
+    &_active .navbar-menu__button__cross:after
+      transform: rotate(-135deg)
+      margin-top: 0
+    &__cross
+      display: block
+      height: 2px
+      width: 20px
+      position: absolute
+      left: calc(50% - 10px)
+      top: calc(50% - 1px)
+      content: ""
+      transition: all 0.3s ease
+      background-color: white
+      &:before, &:after
+        display: block
+        height: 2px
+        width: 20px
+        position: absolute
+        left: calc(50% - 10px)
+        top: calc(50% - 1px)
+        content: ""
+        transition: all 0.3s ease
+        background-color: white
+      &:before
+        margin-top: -7px
+      &:after
+        margin-top: 7px
+    &:focus
+      outline: none
+

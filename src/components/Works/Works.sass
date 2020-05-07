@@ -3,3 +3,42 @@
   height: 100vh
   overflow: hidden
   position: relative
+  &-content
+    &-all
+      margin: 0 auto
+      text-align: center
+    &__cards
+    &__card
+      max-width: 290px
+      max-height: 290px
+      box-shadow: 0 0 10px #ff2400
+      position: relative
+      transition: all 0.3s ease
+      &__descr
+        justify-content: center
+        align-items: center
+        text-align: center
+        display: none
+        transition: all 0.3s ease
+        background-color: rgba(0,0,0,0.5)
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        &__title
+          font-size: 30px
+          padding-bottom: 20px
+          padding-left: 15px
+          padding-right: 15px
+        //&__link
+        //  font-size: 20px
+        //  text-decoration: none
+        //  color: white
+        //  &:hover
+        //    text-shadow: 0 0 10px #ff2400, 0 0 40px #ff2400, 0 0 80px #ff2400
+
+.works-content__card:hover .works-content__card__descr
+  display: flex
+  box-shadow: 0 0 10px #ff2400, 0 0 40px #ff2400, 0 0 80px #ff2400
+  transition: all 0.3s ease

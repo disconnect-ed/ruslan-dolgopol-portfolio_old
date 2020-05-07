@@ -1,22 +1,31 @@
 import React from "react";
-import NavButton from "./NavBarButton/NavButton";
+import SmallButton from "../../common/Buttons/SmallButton/SmallButton";
 import './NavBar.sass'
-import './NavBarButton/NavColors.sass'
+import '../../common/Buttons/SmallButton/SmallButtonColors.sass'
+import {NavLink} from "react-router-dom";
+import NavBarMenu from "./NavBarMenu/NavBarMenu";
+import { useState } from 'react';
 
 const NavBar = (props) => {
+
+    const [state, setState] = useState(false);
+
     return (
         <nav className='navbar'>
             <div className="container">
                 <div className="navbar-wrap">
                     <div className="navbar-logo">
-                        <img src="img/logo-white.png" alt="Ruslan Dolgopol"/>
+                        <NavLink to='/' ><img src="img/logo-white.png" alt="Ruslan Dolgopol"/></NavLink>
                     </div>
                     <div className="navbar-links">
-                        <NavButton active={''} color={props.color} href={'/main'} title={'Главная'} />
-                        <NavButton active={''} color={props.color} href={'/about'} title={'О себе'} />
-                        <NavButton active={''} color={props.color} href={'/skills'} title={'Навыки'} />
-                        <NavButton active={''} color={props.color} href={'/works'} title={'Работы'} />
-                        <NavButton active={''} color={props.color} href={'/contacts'} title={'Контакты'} />
+                        <SmallButton active={''} color={props.color} href={'/main'} title={'Главная'} />
+                        <SmallButton active={''} color={props.color} href={'/about'} title={'О себе'} />
+                        <SmallButton active={''} color={props.color} href={'/skills'} title={'Навыки'} />
+                        <SmallButton active={''} color={props.color} href={'/works'} title={'Работы'} />
+                        <SmallButton active={''} color={props.color} href={'/contacts'} title={'Контакты'} />
+                    </div>
+                    <div className='navbar-burger-menu' onClick={() => setState(!state)}>
+                        <NavBarMenu color={props.color}  active={state} />
                     </div>
                 </div>
             </div>

@@ -1,11 +1,11 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
-import './MainButton.sass'
+import './LinkButton.sass'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const MainButton = (props) => {
+
+const LinkButton = (props) => {
     return (
-        <NavLink className={`main__button main__button_${props.color}`} to={props.href} >
+        <a target='_blank' className={`nav__button nav__button_${props.color} ${props.active}`} href={props.href} >
             <span className={`button__line button__line-top button__line-top_${props.color}`}></span>
             <span className={`button__line button__line-right button__line-right_${props.color}`}></span>
             <span className={`button__line button__line-bottom button__line-bottom_${props.color}`}></span>
@@ -13,8 +13,8 @@ const MainButton = (props) => {
             {props.icon && <FontAwesomeIcon icon={props.icon} />}
             {props.icon && ' '}
             {props.title}
-        </NavLink>
+        </a>
     )
 }
 
-export default MainButton;
+export default LinkButton;
